@@ -36,7 +36,7 @@ const Header = () => {
 "
     >
       <div className="logo-wrapper  flex items-center space-x-2 self-center md:self-center">
-        <img src="" alt="" className="logo size-8 md:size-9 rounded-full " />
+        <img src="./logoMeal.png" alt="" className="logo size-8 md:size-9 rounded-full " />
         <h1 className="md:text-2xl font-extrabold   text-green-200 text-lg ">
           ETFoodz
         </h1>
