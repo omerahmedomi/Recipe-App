@@ -31,7 +31,7 @@ const Header = () => {
   }, []);
   return (
     <header
-      className=" relative font-poppins md:flex justify-between items-center  text-white p-4 bg-gradient-to-b from-green-700 to-teal-900 h-16 h-28 md:h-auto 
+      className=" relative font-poppins md:flex justify-between items-center  text-white p-4 bg-gradient-to-b from-green-700 to-teal-900 h-16 h-28 md:h-auto  
       grid grid-cols-2   max-[500px]:justify-items-start max-[500px]:content-start max-[500px]:h-auto
 "
     >

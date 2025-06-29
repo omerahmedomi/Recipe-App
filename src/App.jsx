@@ -31,6 +31,12 @@ const App = () => {
           </p>
         </div>
       </div>
+
+      <div className='popular-dishes flex flex-col justify-center items-center text-center'>
+        <h1 className='pt-10 font-poppins text-4xl font-semibold  text-lime-600 sm:text-5xl  '>Popular Dishes</h1>
+        <p className='mt-3 text-lg text-lime-700 leading-5 sm:text-xl '>Have a quick view of some of the well-known meals in Ethiopia</p>
+        <CarouselComponent />
+      </div>
       <Footer />
     </>
   );
