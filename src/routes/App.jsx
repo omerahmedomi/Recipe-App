@@ -12,7 +12,7 @@ const App = () => {
 "
       >
         <div className="hero-img flex-1 order-2  bg-[url(/smk.png)] bg-no-repeat bg-cover  min-[500px]:order-0  items-start  justify-center ">
-          <img className="" src="./HeroTibs.png" alt="" />
+          <img className="hover:scale-105 transition-all duration-400 " src="./HeroTibs.png" alt="" />
         </div>
         <div className=" flex-1 order-1 font-poppins flex flex-col  justify-center min-[500px]:self-start min-[750x]:self-center min-[500px]:py-20 min-[750px]:py-40 items-start min-[750px]:items-end">
           <h2 className="font-extrabold text-5xl mt-8 text-green-950 min-[680px]:text-6xl  min-[860px]:text-7xl ">
