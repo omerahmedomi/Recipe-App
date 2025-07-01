@@ -77,8 +77,8 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a className="transition-colors duration-300" href="/signup">
-                Login/Signup
+              <a className="transition-colors duration-300" href="/meals">
+                View All Meals
               </a>
             </li>
           </ul>

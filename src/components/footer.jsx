@@ -22,8 +22,8 @@ const footer = () => {
           </Link>
         </li>
         <li>
-          <Link className="transition-colors duration-300" to="/signup">
-            Login/Signup
+          <Link className="transition-colors duration-300" to="/meals">
+            View All Meals
           </Link>
         </li>
       </ul>

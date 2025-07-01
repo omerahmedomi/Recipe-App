@@ -3,7 +3,7 @@ import MealCard from '../components/MealCard'
 
 const About = () => {
   return (
-    <MealCard/>
+    <div>About</div>
   )
 }
 

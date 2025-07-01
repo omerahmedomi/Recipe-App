@@ -3,23 +3,22 @@ import React from "react";
 import ArrowTopRight from "./ArrowTopRight";
 // h-60 min-[500px]:h-75 sm:h-85 
 // min-[500px]:w-[75%] sm:w-[50%]
-const MealCard = () => {
+const MealCard = ({title,desc,src}) => {
   return (
     <div className="flex flex-col justify-start items-start p-4 bg-emerald-200  space-y-7   m-auto  rounded-lg max-w-90">
       <div className="bg-amber-600 z-20 w-full rounded-md min-h-60 max-h-190 ">
         
         <img
-          src="/logoMeal.png"
+          src={src}
           className="w-full max-h-60 object-cover hover:scale-101 transiton duration-400 hover:shadow-sm rounded-md "
           alt="meal"
         />
       </div>
 
       <div className="info  space-y-3 ">
-        <h3 className="font-bold text-lg text-green-900 ">Lorem Ipsum</h3>
+        <h3 className="font-bold text-lg text-green-900 ">{title}</h3>
         <p className="leading-5 font-semibold text-green-800">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          porro vel, magni rerum saepe libero.
+          {desc}
         </p>
       </div>
       <div className="  flex gap-4 text-sm font-semibold sm:text-base ">
