@@ -21,7 +21,7 @@ const NavLinks = () => {
       </li>
       <li>
         <a className="transition-colors duration-300" href="/meals">
-          View All Meals
+          ViewMeals
         </a>
       </li>
     </ul>
