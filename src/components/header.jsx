@@ -5,6 +5,7 @@ import CancelButton from './CancelButton';
 import SearchBar from './SearchBar';
 import NavLinks from './NavLinks';
 import MagnifyingGlass from './MagnifyingGlass';
+import { Link } from 'react-router-dom';
 
 
 
@@ -35,12 +36,19 @@ const Header = () => {
       grid grid-cols-2   max-[500px]:justify-items-start max-[500px]:content-start max-[500px]:h-auto
 "
     >
-      <div className="logo-wrapper  flex items-center space-x-2 self-center md:self-center">
-        <img src="./logoMeal.png" alt="" className="logo size-8 md:size-9 rounded-full " />
-        <h1 className="md:text-2xl font-extrabold   text-green-200 text-lg ">
-          ETFoodz
-        </h1>
-      </div>
+      <Link to='/'>
+        <div className="logo-wrapper cursor-pointer  flex items-center space-x-2 self-center md:self-center">
+          <img
+            src="/logoMeal.png"
+            alt=""
+            className="logo size-8 md:size-9 rounded-full "
+          />
+          <h1 className="md:text-2xl font-extrabold   text-green-200 text-lg ">
+            ETFoodz
+          </h1>
+        </div>
+      </Link>
+
       {isMenuOpen && (
         <ul className="min-[500px]:hidden absolute top-full right-0 w-full bg-teal-800 z-40 p-4 shadow-lg">
           <li>
