@@ -52,7 +52,7 @@ const Meals = () => {
             {filteredMeals.map((meal, index) => (
               <MealCard
                 key={index}
-                src={meal.src}
+                src={meal.src }
                 title={meal.title}
                 desc={meal.description}
                 id={meal.id}
