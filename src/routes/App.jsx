@@ -4,6 +4,7 @@ import Footer from "../components/footer";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import MealCard from "./../components/MealCard";
+import getMeals from "../appwrite";
 
 const responsive = {
   desktop: {
@@ -24,7 +25,10 @@ const responsive = {
 };
 
 const App = ({deviceType}) => {
+getMeals()
+  
   return (
+    
     <>
       <Header />
       <div

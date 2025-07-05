@@ -2,10 +2,12 @@ import React from "react";
 import ArrowTopRight from "../components/ArrowTopRight";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import meals from "../Meals";
+// import meals from "../Meals";
 import { useParams } from "react-router-dom";
 // float-left mr-4 mb-4
+import meals from '../routes/Meals'
 const Meal_Info = () => {
+  
   const param = useParams();
   const mealToDisplay = meals.find((meal) => meal.id === param.meal_id);
   return (

@@ -1,9 +1,12 @@
 import React from 'react'
-import MealCard from '../components/MealCard'
+import Spinner from './../components/Spinner';
+
 
 const About = () => {
   return (
-    <div>About</div>
+    <div>
+      <Spinner/>
+    </div>
   )
 }
 
