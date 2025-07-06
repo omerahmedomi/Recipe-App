@@ -2,17 +2,22 @@ import React from "react";
 import ArrowTopRight from "../components/ArrowTopRight";
 import Header from "../components/header";
 import Footer from "../components/footer";
-// import meals from "../Meals";
-import { useParams } from "react-router-dom";
-// float-left mr-4 mb-4
-import meals from '../routes/Meals'
+import { useLocation, useParams } from "react-router-dom";
+import {useState, useEffect } from "react";
+import ScrollToTop from './../components/ScrollToTop';
+
+
 const Meal_Info = () => {
-  
-  const param = useParams();
-  const mealToDisplay = meals.find((meal) => meal.id === param.meal_id);
+  const { meal_id } = useParams();
+  const { state } = useLocation();
+  const meal = state?.meal; // Get the meal directly from navigation state
+
+ 
   return (
     <>
+      <ScrollToTop />
       <Header />
+
       <div
         className="bg-gradient-to-br from-green-400 to-green-300
 
@@ -31,9 +36,7 @@ const Meal_Info = () => {
             />
           </div>
           <div className="information mt-9 sm:mt-auto text-green-900 ">
-            <h1 className="title font-semibold text-lg ">
-              {mealToDisplay.name}
-            </h1>
+            <h1 className="title font-semibold text-lg ">{meal.name}</h1>
             <p className="info mt-4 sm:mt-2 sm:leading-7 text-justify ">
               {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
               ipsa dicta deserunt ratione esse, libero porro repellendus numquam
@@ -49,7 +52,7 @@ const Meal_Info = () => {
               amet consectetur adipisicing elit. Optio quod eum magnam, unde
               temporibus tenetur dolore, laudantium tempore nobis ad incidunt
               vel iste. Vero sit, dolor neque quae asperiores natus. */}
-              {mealToDisplay.longDescription}
+              {meal.longDescription}
             </p>
           </div>
         </div>
@@ -67,11 +70,13 @@ const Meal_Info = () => {
             </li>
             <li className="even:bg-green-200 odd:bg-green-300">b</li>
             <li className="even:bg-green-200 odd:bg-green-300">c</li> */}
-            {mealToDisplay.nutritionalFacts.map((fact) => (
+            {meal.nutritional_facts.map((fact) => (
               <li
                 className="even:bg-green-200 
           odd:bg-green-300"
-              >{fact}</li>
+              >
+                {fact}
+              </li>
             ))}
           </ul>
         </div>
@@ -82,9 +87,7 @@ const Meal_Info = () => {
           <button
             className="group bg-lime-200 px-4 py-2 flex gap-2 rounded-lg text-teal-800 focus:outline-none focus:ring-2 focus:ring-lime-400 hover:bg-lime-300 transition duration-500 cursor-pointer
         "
-            onClick={() =>
-              (window.location.href = `/meals/${param.meal_id}/recipe`)
-            }
+            onClick={() => (window.location.href = `/meals/${meal_id}/recipe`)}
           >
             View Recipe{" "}
             <span className="group-hover:translate-x-0.5 transition duration-300">

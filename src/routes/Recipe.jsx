@@ -2,18 +2,19 @@ import React from "react";
 import Header from "./../components/header";
 import Footer from "./../components/footer";
 import Check from './../components/Check';
-import meals from './../Meals'
-import { useParams } from "react-router-dom";
-// flex flex-col items-start
-// w-9/10 sm-w-full md:w-4/5
-// justify-self-start grid grid-cols-3 
-// min-[400px]:grid-cols-4
-// sm:grid-cols-5 md:grid-cols-2 lg:grid-cols-5
+
+import { useParams,useLocation } from "react-router-dom";
+import ScrollToTop from './../components/ScrollToTop';
+
 const Recipe = () => {
-  const param=useParams()
-  const mealToShow=meals.find((meal)=>meal.id==param.meal_id)
+  // const { meal_id } = useParams();
+  const { state } = useLocation();
+  const meal = state?.meal;
+
+  
   return (
     <>
+    <ScrollToTop/>
       <Header />
       <div className="  bg-green-300 font-poppins ">
         <h1 className="underline underline-offset-6 text-center pt-10 text-lg sm:2xl lg:text-2xl  text-green-800 font-semibold">
@@ -54,7 +55,7 @@ const Recipe = () => {
                 </span>
                 afdfddfd
               </li> */}
-              {mealToShow.ingredients.map((ingredient) => (
+              {meal.ingredients.map((ingredient) => (
                 <li>
                   <span className="inline-flex text-green-900 pr-1">
                     {" "}
@@ -71,7 +72,7 @@ const Recipe = () => {
             Step by Step Instructions
           </h1>
           <ol className="*:even:bg-green-200 *:px-4 *:py-2 md:w-3/4 mx-auto w-9/10 *:odd:bg-green-400 list-decimal pb-6">
-            {mealToShow.recipeInstructions.map((instruction)=><li>{instruction}</li>)}
+            {meal.instructions.map((instruction)=><li>{instruction}</li>)}
           </ol>
         </div>
       </div>

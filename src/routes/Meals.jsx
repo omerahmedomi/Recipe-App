@@ -1,37 +1,35 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // import { meals } from "../Meals";
 import MealCard from "../components/MealCard";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import getMeals from "../appwrite";
-import Spinner from './../components/Spinner';
-
+import Spinner from "./../components/Spinner";
 
 const Meals = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [meals, setMeals] = useState([]);
-  const [isloading,setIsLoading]=useState(false);
-  const [errorMessage,setErrorMessage]=useState('')
-   const loadMeals=async()=>{
-    try{
-      setIsLoading(true)
-      setErrorMessage("")
+  const [isloading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
+  const loadMeals = async () => {
+    try {
+      setIsLoading(true);
+      setErrorMessage("");
 
-      const meals= await getMeals()
-      setMeals(meals)
+      const meals = await getMeals();
+      setMeals(meals);
+    } catch (error) {
+      console.log(error);
+      setErrorMessage(error.message);
+    } finally {
+      setIsLoading(false);
     }
-   catch(error){
-    console.log(error)
-    setErrorMessage(error.message)
-   }
-finally{
-  setIsLoading(false)
-}
-  }
+  };
   useEffect(() => {
-    
-    loadMeals()
+    console.log("useEffect called");
+    loadMeals();
   }, []);
+  console.log(meals)
 
   const handleCategoryChange = (e) => {
     const value = e.target.value;
@@ -77,7 +75,10 @@ finally{
       <div className="  bg-green-300 flex-grow flex flex-col items-center ">
         {isloading ? (
           <p className="flex justify-center items-center mt-5 space-x-2">
-           <span className="font-extralight text-lg text-green-900">Fetching Meals</span> <Spinner />
+            <span className="font-extralight text-lg text-green-900">
+              Fetching Meals
+            </span>{" "}
+            <Spinner />
           </p>
         ) : errorMessage ? (
           <p className="text-red-500">{errorMessage}</p>
@@ -86,10 +87,8 @@ finally{
             {filteredMeals.map((meal, index) => (
               <MealCard
                 key={index}
-                src={meal.src}
-                name={meal.name}
-                desc={meal.description}
-                id={meal.$id}
+                meal={meal}
+                
               />
             ))}
           </div>
@@ -104,8 +103,6 @@ finally{
       <Footer />
     </div>
   );
-
 };
 
 export default Meals;
-
