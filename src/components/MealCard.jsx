@@ -1,31 +1,34 @@
 
 import React from "react";
 import ArrowTopRight from "./ArrowTopRight";
-import { Link, useNavigate } from 'react-router-dom';
-// h-60 min-[500px]:h-75 sm:h-85 
-// min-[500px]:w-[75%] sm:w-[50%]
+import { Link} from 'react-router-dom';
+import { getImageURL } from "../appwrite";
 const MealCard = ({meal}) => {
-  const navigate=useNavigate()
+  console.log("meal.src value:", meal.src);
+  const imageURL = getImageURL(meal.src);
+  console.log("Final image URL:", imageURL);
+
+
   return (
-    <div className="flex flex-col justify-between items-start p-4 bg-emerald-200  space-y-7   rounded-lg max-w-90">
+    <div className="flex flex-col justify-start items-start p-4 bg-green-50  space-y-7   rounded-lg max-w-90">
       <div className=" z-20 w-full rounded-md min-h-60 max-h-190 ">
         <img
-          src={"/logoMeal.png"}
+          src={getImageURL(meal.src)}
           className="w-full max-h-60 object-cover hover:scale-101 transiton duration-400 hover:shadow-sm rounded-md "
-          alt="meal"
+          alt={meal.name}
         />
       </div>
 
-      <div className="info justify-self-center space-y-3 ">
+      <div className="info  space-y-3 flex-grow ">
         <h3 className="font-bold text-lg text-green-900 ">{meal.name}</h3>
         <p className="leading-5 font-semibold text-green-800">
           {meal.description}
         </p>
       </div>
-      <div className="  flex gap-4 text-sm font-semibold sm:text-base ">
+      <div className="  flex gap-4 text-sm font-semibold sm:text-base self-center  ">
         <Link to={`/meals/${meal.$id}/`} state={{ meal }}>
           <button
-            className="group bg-emerald-400 px-4 py-2 flex gap-2 rounded-lg text-green-900 focus:outline-none focus:ring-2 focus:ring-teal-400 hover:bg-green-400 transition  cursor-pointer 
+            className="group bg-emerald-400 px-4 py-2 flex gap-2 rounded-lg text-green-900 focus:outline-none focus:ring-2 focus:ring-teal-400 hover:bg-green-400 transition  cursor-pointer  
         "
             // onClick={() => {
             //   window.location.href = `/meals/${meal.$id}/`;

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import MealCard from "../components/MealCard";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import getMeals from "../appwrite";
+import {getMeals,getCategories} from "../appwrite";
 import Spinner from "./../components/Spinner";
 import ScrollToTop from './../components/ScrollToTop';
 import '../assets/Meals.css'
@@ -12,6 +12,7 @@ import '../assets/Meals.css'
 const Meals = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [meals, setMeals] = useState([]);
+  const [categories,setCategories]=useState([])
   const [isloading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
   const loadMeals = async () => {
@@ -20,7 +21,9 @@ const Meals = () => {
       setErrorMessage("");
 
       const meals = await getMeals();
+      const categories= await getCategories()
       setMeals(meals);
+      setCategories(categories)
     } catch (error) {
       console.log(error);
       setErrorMessage(error.message);
@@ -33,6 +36,8 @@ const Meals = () => {
     loadMeals();
   }, []);
   console.log(meals)
+  console.log(categories)
+  console.log("Selected categories",selectedCategories)
 
   const handleCategoryChange = (e) => {
     const value = e.target.value;
@@ -50,7 +55,7 @@ const Meals = () => {
     <div className="min-h-screen flex flex-col ">
       <ScrollToTop />
       <Header />
-      <div className="category-filters flex flex-col items-center bg-green-300 accent-teal-400 font-poppins j">
+      <div className="category-filters flex flex-col items-center bg-green-200 accent-teal-400 font-poppins j">
         <h1 className="text-center p-4 text-lg text-green-900 font-semibold">
           Categories
         </h1>
@@ -59,29 +64,20 @@ const Meals = () => {
           id="categories"
           className="grid grid-cols-4 justify-center gap-2 sm:gap-x-4 md:gap-x-6 lg:gap-x-8  text-green-800   "
         >
-          {[
-            "breakfast",
-            "lunch & Dinner",
-            "drinks",
-            "vegan",
-            "spicy",
-            "meat",
-            "fasting",
-            "holiday",
-          ].map((cat) => (
-            <label key={cat} className="">
+          {categories.map((cat) => (
+            <label key={cat.name} className="">
               <input
                 type="checkbox"
-                value={cat}
-                checked={selectedCategories.includes(cat)}
+                value={cat.name}
+                checked={selectedCategories.includes(cat.name)}
                 onChange={handleCategoryChange}
               />
-              {cat.charAt(0).toUpperCase() + cat.slice(1)}
+              {cat.name}
             </label>
           ))}
         </div>
       </div>
-      <div className="  bg-green-300 flex-grow flex flex-col items-center ">
+      <div className="  bg-green-200 flex-grow flex flex-col items-center ">
         {isloading ? (
           <p className="flex justify-center items-center mt-5 space-x-2">
             <span className="font-extralight text-lg text-green-900">
