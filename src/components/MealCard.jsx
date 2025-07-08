@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const MealCard = ({meal}) => {
   const navigate=useNavigate()
   return (
-    <div className="flex flex-col justify-start items-start p-4 bg-emerald-200  space-y-7   rounded-lg max-w-90">
+    <div className="flex flex-col justify-between items-start p-4 bg-emerald-200  space-y-7   rounded-lg max-w-90">
       <div className=" z-20 w-full rounded-md min-h-60 max-h-190 ">
         <img
           src={"/logoMeal.png"}
@@ -16,7 +16,7 @@ const MealCard = ({meal}) => {
         />
       </div>
 
-      <div className="info  space-y-3 ">
+      <div className="info justify-self-center space-y-3 ">
         <h3 className="font-bold text-lg text-green-900 ">{meal.name}</h3>
         <p className="leading-5 font-semibold text-green-800">
           {meal.description}

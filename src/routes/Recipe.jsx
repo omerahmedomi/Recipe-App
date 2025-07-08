@@ -21,7 +21,7 @@ const Recipe = () => {
           Recipe for {meal.name}
         </h1>
         <div className="top-level-wrapper md:flex md:flex-row p-5 gap-4 min-[480px]:w-4/5 m-auto  md:w-[100%] lg:w-9/10 ">
-          <div className="bg-pink-200  h-55 min-[600px]:h-70 min-[700px]:h-80 md:flex-1 rounded-lg">
+          <div className="bg-pink-200 md:self-center h-55 min-[600px]:h-70 min-[700px]:h-80 md:flex-1 rounded-lg">
             <img
               src="/logoMeal.png"
               alt=""
@@ -71,7 +71,7 @@ const Recipe = () => {
           <h1 className="text-center p-4 text-green-800 font-semibold ">
             Step by Step Instructions
           </h1>
-          <ol className="*:even:bg-green-200 *:px-4 *:py-2 sm:w-3/4 md:w-120 lg:w-150 mx-auto w-9/10 *:odd:bg-green-400 list-decimal pb-6">
+          <ol className="*:even:bg-green-200 *:px-4 *:py-2  sm:w-9/10 md:w-4/5 lg:7/10 mx-auto w-[93%] *:odd:bg-green-400 list-decimal pb-6">
             {meal.instructions.map((instruction)=><li>{instruction}</li>)}
           </ol>
         </div>

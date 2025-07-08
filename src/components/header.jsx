@@ -36,7 +36,7 @@ const Header = () => {
       grid grid-cols-2   max-[500px]:justify-items-start max-[500px]:content-start max-[500px]:h-auto
 "
     >
-      <Link to='/'>
+      <Link to="/">
         <div className="logo-wrapper cursor-pointer  flex items-center space-x-2 self-center md:self-center">
           <img
             src="/logoMeal.png"
@@ -68,27 +68,19 @@ const Header = () => {
             </div>
           </li>
           <ul className="navlinks md:order-2   flex flex-col space-x-4 *:text-green-200 *:hover:underline-offset-4 *:hover:underline *:hover:text-green-300 *:font-semibold self-center md:self-center   text-[0.9rem] content-end md:text-base justify-end *:active:text-green-700 *:py-2 *:hover:bg-green-300 ">
-            <li>
-              {" "}
-              <a className="transition-colors duration-300" href="/">
-                Home
-              </a>
-            </li>
-            <li>
-              <a className="transition-colors duration-300" href="/about">
-                About
-              </a>
-            </li>
-            <li>
-              <a className="transition-colors duration-300" href="/contact">
-                Contact
-              </a>
-            </li>
-            <li>
-              <Link className="transition-colors duration-300" to={"/meals"}>
-                ViewMeals
-              </Link>
-            </li>
+            {" "}
+            <a className="transition-colors duration-300" href="/">
+              <li> Home</li>
+            </a>
+            <a className="transition-colors duration-300" href="/about">
+              <li> About</li>
+            </a>
+            <a className="transition-colors duration-300" href="/contact">
+              <li>Contact</li>
+            </a>
+            <Link className="transition-colors duration-300" to={"/meals"}>
+              <li> ViewMeals</li>
+            </Link>
           </ul>
         </ul>
       )}

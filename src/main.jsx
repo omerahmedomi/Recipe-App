@@ -8,6 +8,8 @@ import Meals from './routes/Meals.jsx';
 import Meal_Info from './routes/Meal_Info.jsx';
 import Recipe from './routes/Recipe.jsx';
 import ErrorElement from './components/ErrorElement.jsx';
+import ThankYou from './routes/ThankYou.jsx';
+
 
 
 const router = createBrowserRouter([
@@ -39,6 +41,11 @@ const router = createBrowserRouter([
     element: <Recipe />,
     errorElement: <ErrorElement />,
   },
+  {
+    path:'/thank-you',
+    element: <ThankYou/>
+  },
+  
 ]);
 
 createRoot(document.getElementById('root')).render(
