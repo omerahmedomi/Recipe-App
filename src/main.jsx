@@ -7,12 +7,14 @@ import Contact from './routes/Contact';
 import Meals from './routes/Meals.jsx';
 import Meal_Info from './routes/Meal_Info.jsx';
 import Recipe from './routes/Recipe.jsx';
+import ErrorElement from './components/ErrorElement.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorElement />,
   },
   {
     path: "/about",
@@ -23,18 +25,20 @@ const router = createBrowserRouter([
     element: <Contact />,
   },
   {
-    path:"/meals",
-    element:<Meals/>
+    path: "/meals",
+    element: <Meals />,
+    errorElement: <ErrorElement />,
   },
   {
-    path:'/meals/:meal_id',
-    element: <Meal_Info/>
+    path: "/meals/:meal_id",
+    element: <Meal_Info />,
+    errorElement: <ErrorElement />,
   },
   {
-    path:'/meals/:meal_id/recipe',
-    element:<Recipe/>
-  }
-  
+    path: "/meals/:meal_id/recipe",
+    element: <Recipe />,
+    errorElement: <ErrorElement />,
+  },
 ]);
 
 createRoot(document.getElementById('root')).render(

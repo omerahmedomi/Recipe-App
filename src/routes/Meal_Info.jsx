@@ -2,9 +2,9 @@ import React from "react";
 import ArrowTopRight from "../components/ArrowTopRight";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import { useLocation, useParams } from "react-router-dom";
-import {useState, useEffect } from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
 import ScrollToTop from './../components/ScrollToTop';
+import Label from "../components/Label";
 
 
 const Meal_Info = () => {
@@ -61,7 +61,7 @@ const Meal_Info = () => {
           <h1 className="font-semibold text-green-900 text-center   ">
             Nutritional Facts
           </h1>
-          <ul className=" mt-7  border-l-6 *:p-2  border-green-600 text-green-800 flex flex-col md:w-2/3 mx-auto ">
+          <ul className=" mt-7  border-l-6 *:p-2  border-green-600 text-green-800 flex flex-col w-80 mx-auto ">
             {/* <li
               className="even:bg-lime-200 
           odd:bg-green-300"
@@ -80,20 +80,32 @@ const Meal_Info = () => {
             ))}
           </ul>
         </div>
-        <div className="categories mt-4 px-2 text-lg border-l-5 border-green-700 bg-green-200 clear-left text-lime-800 md:w-2/3 mx-auto">
-          Categories:
+        <div className="categories-wrappper flex jusify-center items-center ">
+          <div className="categories mt-4 p-1  text-lg border-l-5 border-green-700 bg-green-200 clear-left text-lime-800    inline-flex  mx-auto flew-wrap items-center  gap-4 flex-wrap gap-y-0 ">
+            <h1>Categories: </h1>
+            
+              {meal.categories.map((cat, index) => (
+                <p>
+                  <Label category={cat} key={index} />
+                </p>
+              ))}
+           
+          </div>
         </div>
+
         <div className="recipe-button flex justify-center items-center mt-8">
-          <button
-            className="group bg-lime-200 px-4 py-2 flex gap-2 rounded-lg text-teal-800 focus:outline-none focus:ring-2 focus:ring-lime-400 hover:bg-lime-300 transition duration-500 cursor-pointer
+          <Link to={`/meals/${meal.$id}/recipe`} state={{ meal }}>
+            <button
+              className="group bg-lime-200 px-4 py-2 flex gap-2 rounded-lg text-teal-800 focus:outline-none focus:ring-2 focus:ring-lime-400 hover:bg-lime-300 transition duration-500 cursor-pointer
         "
-            onClick={() => (window.location.href = `/meals/${meal_id}/recipe`)}
-          >
-            View Recipe{" "}
-            <span className="group-hover:translate-x-0.5 transition duration-300">
-              <ArrowTopRight />
-            </span>
-          </button>
+              // onClick={() => (window.location.href = `/meals/${meal_id}/recipe`)}
+            >
+              View Recipe{" "}
+              <span className="group-hover:translate-x-0.5 transition duration-300">
+                <ArrowTopRight />
+              </span>
+            </button>
+          </Link>
         </div>
       </div>
       <Footer />

@@ -5,6 +5,9 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import getMeals from "../appwrite";
 import Spinner from "./../components/Spinner";
+import ScrollToTop from './../components/ScrollToTop';
+import '../assets/Meals.css'
+
 
 const Meals = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -45,17 +48,23 @@ const Meals = () => {
 
   return (
     <div className="min-h-screen flex flex-col ">
+      <ScrollToTop />
       <Header />
-      <div className="category-filters flex flex-col items-center bg-green-300 accent-teal-400 font-poppins">
+      <div className="category-filters flex flex-col items-center bg-green-300 accent-teal-400 font-poppins j">
         <h1 className="text-center p-4 text-lg text-green-900 font-semibold">
           Categories
         </h1>
-        <div className="grid grid-cols-4 items-center space-x-2 sm:space-x-10 md:space-x-15 lg:space-x-20 text-green-800">
+        {/* space-x-2 sm:space-x-10 md:space-x-15 lg:space-x-20 */}
+        <div
+          id="categories"
+          className="grid grid-cols-4 justify-center gap-2 sm:gap-x-4 md:gap-x-6 lg:gap-x-8  text-green-800   "
+        >
           {[
             "breakfast",
-            "lunch",
-            "dinner",
+            "lunch & Dinner",
+            "drinks",
             "vegan",
+            "spicy",
             "meat",
             "fasting",
             "holiday",
@@ -83,13 +92,9 @@ const Meals = () => {
         ) : errorMessage ? (
           <p className="text-red-500">{errorMessage}</p>
         ) : filteredMeals.length > 0 ? (
-          <div className="  grid grid-cols-1 min-[825px]:grid-cols-2 min-[1190px]:grid-cols-3 p-10 gap-y-8 gap-x-8">
+          <div className="  grid grid-cols-1 min-[825px]:grid-cols-2 min-[1190px]:grid-cols-3 p-10 gap-y-8 gap-x-8 2xl:gap-20">
             {filteredMeals.map((meal, index) => (
-              <MealCard
-                key={index}
-                meal={meal}
-                
-              />
+              <MealCard key={index} meal={meal} />
             ))}
           </div>
         ) : (

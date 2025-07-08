@@ -27,7 +27,7 @@ const client = new Client()
     } catch (error) {
         console.log(error)
         console.error("Error fetching meals:", error.message, error);
-        return []
+        alert("Error: "+error.message);
     }
   }
 export default getMeals

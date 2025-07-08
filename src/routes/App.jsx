@@ -3,14 +3,10 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import MealCard from "./../components/MealCard";
-import getMeals from "../appwrite";
+import PopularMeals from "./../components/PopularMeals";
+import topEthiopianMeals from "../PopularMeals";
 import ScrollToTop from './../components/ScrollToTop';
-const popularMeals=[
-  {
-    
-  },
-]
+
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1085 },
@@ -79,7 +75,7 @@ const App = ({deviceType}) => {
             ssr={true} // means to render carousel on server-side.
             infinite={true}
             autoPlay={deviceType !== "mobile" ? true : false}
-            autoPlaySpeed={3000}
+            autoPlaySpeed={7000}
             keyBoardControl={true}
             customTransition="all .5"
             transitionDuration={500}
@@ -90,10 +86,9 @@ const App = ({deviceType}) => {
             itemClass="carousel-item-padding-40-px"
             minimumTouchDrag={25}
           >
-            <MealCard meal={meal} />
-            <MealCard meal={meal} />
-            <MealCard meal={meal} />
-            <MealCard meal={meal}/>
+           {topEthiopianMeals.map((meal,index)=>
+          <PopularMeals key={index} meal={meal}/>
+          )}
           </Carousel>
         </div>
       </div>

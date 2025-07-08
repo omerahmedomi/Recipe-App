@@ -85,9 +85,9 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a className="transition-colors duration-300" href="/meals">
+              <Link className="transition-colors duration-300" to={"/meals"}>
                 ViewMeals
-              </a>
+              </Link>
             </li>
           </ul>
         </ul>
