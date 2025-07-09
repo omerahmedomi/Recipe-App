@@ -32,11 +32,11 @@ const footer = () => {
       <div className="text-lime-100 mt-10 flex space-x-2 ">
         <p>Made by Umer:</p>
 
-        <a href="https://github.com/omerahmedomi" target='_blank'>
+        <a href="https://github.com/omerahmedomi" target="_blank">
           <GithubLogo />
         </a>
-        <a href="">
-          <LinkedinLogo/>
+        <a href="https://linkedin.com/in/umerahmedmohammed" target="_blank">
+          <LinkedinLogo />
         </a>
       </div>
       <p className="text-lime-100 text-sm ">
