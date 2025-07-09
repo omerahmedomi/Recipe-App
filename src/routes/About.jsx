@@ -17,9 +17,10 @@ const About = () => {
           {/* Optional Image */}
           <div className="w-full flex justify-center">
             <img
-              src="/logoMeal.png" // replace this with your actual image path
+              src="/AboutImage.png" // replace this with your actual image path
               alt="Ethiopian Food"
               className="rounded-lg shadow-md w-full max-h-80 object-cover"
+              loading="eager"
             />
           </div>
 
@@ -42,7 +43,7 @@ const About = () => {
             <p>
               Ethiopian food is not just about ingredients and recipes; it's a
               cultural expression. With this app, I hope to preserve and share
-              that culture with the world—one delicious dish at a time.
+              that culture with the world, one delicious dish at a time.
             </p>
           </div>
 

@@ -10,12 +10,13 @@ const MealCard = ({meal}) => {
 
 
   return (
-    <div className="flex flex-col justify-start items-start p-4 bg-green-50  space-y-7   rounded-lg max-w-90">
+    <div className="flex flex-col justify-start items-start p-4 bg-green-100  space-y-7 shadow-lg  rounded-lg max-w-90">
       <div className=" z-20 w-full rounded-md min-h-60 max-h-190 ">
         <img
-          src={getImageURL(meal.src)}
-          className="w-full max-h-60 object-cover hover:scale-101 transiton duration-400 hover:shadow-sm rounded-md "
+          src={getImageURL(meal.src)||'/logoMeal.png'}
+          className="w-full h-60 object-cover hover:scale-101 transiton duration-400 shadow-lg hover:shadow-lg rounded-md "
           alt={meal.name}
+          loading="eager"
         />
       </div>
 

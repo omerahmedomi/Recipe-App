@@ -1,5 +1,7 @@
 import React from 'react'
 import  {Link} from 'react-router-dom';
+import GithubLogo from './GithubLogo';
+import LinkedinLogo from './LinkedinLogo';
 
 const footer = () => {
   return (
@@ -27,7 +29,16 @@ const footer = () => {
           </Link>
         </li>
       </ul>
-      <h1 className="text-lime-100 mt-10 ">Made by Umer</h1>
+      <div className="text-lime-100 mt-10 flex space-x-2 ">
+        <p>Made by Umer:</p>
+
+        <a href="https://github.com/omerahmedomi" target='_blank'>
+          <GithubLogo />
+        </a>
+        <a href="">
+          <LinkedinLogo/>
+        </a>
+      </div>
       <p className="text-lime-100 text-sm ">
         &copy; {new Date().getFullYear()} All Rights Reserved
       </p>
