@@ -77,7 +77,7 @@ const Meal_Info = () => {
         <div className="recipe-button flex justify-center items-center mt-8">
           <Link to={`/meals/${meal.$id}/recipe`} state={{ meal }}>
             <button
-              className="group bg-lime-200 px-4 py-2 flex gap-2 rounded-lg text-teal-800 focus:outline-none focus:ring-2 focus:ring-lime-400 hover:bg-lime-300 transition duration-500 cursor-pointer
+              className="group bg-lime-100 shadow-2xl px-4 py-2 flex gap-2 rounded-lg text-teal-800 focus:outline-none focus:ring-2 focus:ring-lime-400 hover:bg-lime-200 transition duration-500 cursor-pointer
         "
               // onClick={() => (window.location.href = `/meals/${meal_id}/recipe`)}
             >
