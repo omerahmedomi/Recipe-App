@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import PopularMeals from "./../components/PopularMeals";
 import topEthiopianMeals from "../PopularMeals";
-import ScrollToTop from './../components/ScrollToTop';
-import SearchBar from './../components/SearchBar';
+
 
 const responsive = {
   desktop: {
@@ -27,11 +26,13 @@ const responsive = {
 };
 
 const App = ({deviceType}) => {
+  
 
   
   return (
     <>
       <Header />
+      {}
       <div
         className="flex flex-col min-[500px]:flex-row justify-center items-center bg-gradient-to-r from-emerald-300 to-green-200
 "

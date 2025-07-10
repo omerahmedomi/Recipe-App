@@ -3,12 +3,12 @@ import Header from "./../components/header";
 import Footer from "./../components/footer";
 import Check from './../components/Check';
 
-import { useParams,useLocation } from "react-router-dom";
+import {useLocation } from "react-router-dom";
 import ScrollToTop from './../components/ScrollToTop';
 import { getImageURL } from "../appwrite";
 
 const Recipe = () => {
-  // const { meal_id } = useParams();
+  
   const { state } = useLocation();
   const meal = state?.meal;
 

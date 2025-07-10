@@ -1,10 +1,12 @@
 import React from 'react'
 import Header from '../components/header';
 import Footer from './../components/footer';
+import ScrollToTop from './../components/ScrollToTop';
 
 const Contact = () => {
   return (
     <>
+    <ScrollToTop/>
       <Header />
       <div className="about-wrapper min-h-screen flex justify-center items-center  bg-green-300 font-poppins px-4 py-10">
         <div className="about bg-emerald-100 w-full sm:w-11/12 md:w-4/5 lg:w-3/5  rounded-2xl shadow-2xl p-6 md:p-10 space-y-6">

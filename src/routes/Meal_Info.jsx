@@ -9,6 +9,7 @@ import { getImageURL } from "../appwrite";
 
 
 const Meal_Info = () => {
+
  
   const { state } = useLocation();
   const meal = state?.meal; // Get the meal directly from navigation state
@@ -79,7 +80,7 @@ const Meal_Info = () => {
             <button
               className="group bg-lime-100 shadow-2xl px-4 py-2 flex gap-2 rounded-lg text-teal-800 focus:outline-none focus:ring-2 focus:ring-lime-400 hover:bg-lime-200 transition duration-500 cursor-pointer
         "
-              // onClick={() => (window.location.href = `/meals/${meal_id}/recipe`)}
+              
             >
               View Recipe{" "}
               <span className="group-hover:translate-x-0.5 transition duration-300">
