@@ -4,6 +4,7 @@ This is a simple app that give information  Ethiopian dishes along with recipes 
 
 ## Technologies Used
  - React
+ - React Router for routing
  - Tailwindcss
  - Appwrite SDK for databases and storage
 
