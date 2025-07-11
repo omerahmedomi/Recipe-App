@@ -1,6 +1,6 @@
 # ETFoodz - Recipe and info app of Ethiopian dishes
 
-This is a simple app that give information  Ethiopian dishes along with recipes  and nutritional facts
+This is a simple app that give information on Ethiopian dishes along with recipes  and nutritional facts
 
 ## Technologies Used
  - React
