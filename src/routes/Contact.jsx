@@ -22,7 +22,7 @@ const Contact = () => {
             <input
               type="hidden"
               name="_next"
-              value="http://localhost:5173/thank-you"
+              value="http://etfoodz.vercel.app/thank-you"
             />
             <div className="flex flex-col justify-start">
               <label htmlFor="name">Name:</label>
